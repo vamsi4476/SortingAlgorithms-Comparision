@@ -1,3 +1,77 @@
+# Sorting Algorithm Comparisons
+
+This Java program compares the performance of various sorting algorithms by measuring the number of comparisons required to sort arrays of increasing sizes. The algorithms included are:
+
+- Insertion Sort
+- Quick Sort
+- Shell Sort with different gap sequences (Shell, Hibbard, Knuth, Gonnet, Sedgewick)
+- Heap Sort
+- Merge Sort
+
+It also calculates the theoretical `N log N` value for each array size, providing a comparison with expected time complexity.
+
+## Features
+
+- **Comparison of Sorting Algorithms**: Measures the number of comparisons made by each sorting algorithm on arrays of different sizes.
+- **Gap Sequences for Shell Sort**: Includes several gap sequences (Shell, Hibbard, Knuth, Gonnet, and Sedgewick) to observe their impact on Shell Sort performance.
+- **N log N Calculation**: Computes `N log N` for each array size, showing a theoretical baseline for comparison.
+- **Detailed Output**: Outputs the comparison counts for each algorithm and array size, allowing for analysis and comparison.
+
+## Project Structure
+
+- `Assignment5_final.java`: Main class that implements sorting algorithms and comparison counting.
+- Sorting Methods:
+  - **Insertion Sort**: Simple sorting algorithm for comparison.
+  - **Quick Sort**: Recursive divide-and-conquer algorithm.
+  - **Shell Sort**: Implemented with different gap sequences.
+  - **Heap Sort**: Sorting based on binary heap data structure.
+  - **Merge Sort**: Divide-and-conquer sorting algorithm.
+
+## Sorting Algorithms and Methods
+
+### Insertion Sort
+A basic sorting algorithm that builds the sorted array one element at a time.
+
+### Quick Sort
+Uses a pivot to partition the array into smaller parts, then recursively sorts each part. The `partition` method selects a pivot and arranges elements around it, and the `quickSort` method recursively applies the sort.
+
+### Shell Sort
+An optimization of insertion sort that uses gap sequences to sort elements. Various gap sequences are implemented:
+- **Shell**: Divides array based on halving.
+- **Hibbard**: Sequence of the form `2^k - 1`.
+- **Knuth**: Sequence of the form `(3^k - 1) / 2`.
+- **Gonnet**: Sequence that reduces by approximately a factor of 2.2.
+- **Sedgewick**: Combination of powers of 4 and 2 for gaps.
+
+### Heap Sort
+Transforms the array into a binary heap, then extracts elements one by one, maintaining the heap property with `heapify`.
+
+### Merge Sort
+A recursive sorting algorithm that divides the array, sorts each half, and merges them.
+
+## Installation and Execution
+
+1. **Compile the Program**:
+   `javac Assignment5_final.java`
+
+2. **Run the Program**:
+   `java Assignment5_final`
+
+3. **Output**:
+   The program will print the comparison counts for each sorting algorithm for arrays of different sizes. It also calculates and displays the value of `N log N` for each size.
+
+## Key Methods and Functions
+
+- `generateRandomArray(int size)`: Generates an array of random integers of the specified size.
+- `quickSort(int[] arr, int low, int high)`: Implements Quick Sort using the `partition` method.
+- `shellSort(int[] arr, String sequenceType)`: Sorts an array using Shell Sort with different gap sequences.
+- `heapSort(int[] arr)`: Sorts an array using Heap Sort and `heapify`.
+- `mergeSort(int[] arr, int l, int r)`: Sorts an array using Merge Sort and the `merge` method.
+- `calculateNLogN(int n)`: Computes the theoretical `N log N` value for a given size `n`.
+
+## Example Output
+
+The program will output the number of comparisons for each sorting algorithm and array size. Example output for array sizes of 1000 to 10000:
 
 Array size: 1000 <br /> 
 Insertion Sort comparisons: 262474  <br /> 
